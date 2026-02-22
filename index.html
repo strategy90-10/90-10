@@ -1,0 +1,94 @@
+html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90 vs 10 | 9割側の生存戦略</title>
+    <style>
+        body { background-color: #000; color: #ddd; font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* 第1画面（トップ） */
+        #top-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
+        .container { max-width: 600px; padding: 20px; }
+        .chart-container { position: relative; width: 260px; height: 260px; margin: 0 auto 30px; border-radius: 50%; background: conic-gradient(#00c853 0% 90%, #ff1744 90% 100%); box-shadow: 0 0 40px rgba(0,200,83,0.2); }
+        .chart-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem; font-weight: bold; color: #fff; }
+        .question { font-size: 1.5rem; font-weight: bold; line-height: 1.6; margin-bottom: 40px; color: #fff; }
+        .btn-entry { font-size: 1.1rem; border: 1px solid #00c853; padding: 18px 40px; color: #00c853; cursor: pointer; background: transparent; transition: 0.4s; }
+        .btn-entry:hover { background: #00c853; color: #000; }
+
+        /* 第2画面（詳細） */
+        #detail-page { min-height: 100vh; padding: 60px 24px; display: none; background: #050505; }
+        .content { max-width: 680px; margin: 0 auto; line-height: 1.9; }
+        h2 { border-left: 4px solid #00c853; padding-left: 15px; color: #fff; margin-top: 50px; }
+        .accent-green { color: #00e676; }
+        .important { color: #fff; font-weight: bold; text-decoration: underline #00c853; }
+        .list-box { background: #111; padding: 25px; border-radius: 4px; border: 1px solid #222; margin: 30px 0; }
+        .list-box li { margin-bottom: 15px; list-style-type: none; position: relative; }
+        .list-box li::before { content: "🟢"; position: absolute; left: -30px; top: 2px; }
+        
+        /* 決行日エリア */
+        .x-day-box { background: linear-gradient(45deg, #004d40, #000); border: 2px solid #00e676; padding: 40px 20px; text-align: center; margin: 40px 0; border-radius: 8px; }
+        .date-display { font-size: 3.5rem; font-weight: bold; color: #fff; margin: 10px 0; letter-spacing: 0.1em; }
+        
+        .slide-up { transform: translateY(-100vh); }
+    </style>
+</head>
+<body>
+
+<div id="top-page">
+    <div class="container">
+        <p style="color:#666; letter-spacing: 0.2em;">THE 90% STRATEGY</p>
+        <div class="chart-container"><div class="chart-label">90 : 10</div></div>
+        <div class="question">
+            あなたは、<span style="color:#ff5252">搾取する側（10%）</span>か？<br>
+            それとも、<span class="accent-green">搾取される側（90%）</span>か？
+        </div>
+        <button class="btn-entry" onclick="showDetail()">#9割側 として生きる</button>
+    </div>
+</div>
+
+<div id="detail-page">
+    <div class="content">
+        <h1 class="accent-green">生存戦略：平日ボイコット</h1>
+        <p>お疲れ様です、9割側の皆さん。<br>
+        企業の内部留保 <span class="important">637兆円</span>。それは私たちの命の時間です。<br>
+        新しい年度、搾取の歯車を一度止め、自分自身を取り戻しませんか。</p>
+
+        <div class="x-day-box">
+            <p style="margin:0; font-size: 1.2rem;">第一次 決行予定日</p>
+            <div class="date-display">4.10 <span style="font-size: 1.5rem;">FRI</span></div>
+            <p style="margin:0; color:#00e676;">週末、私たちは「自由」を選びます</p>
+        </div>
+
+        <h2>ボイコットの心得</h2>
+        <div class="list-box">
+            <ul>
+                <li><span class="important">場所：</span> 各都道府県庁前（東京都民は国会議事堂前）</li>
+                <li><span class="important">持参：</span> 椅子（ゴザ）、十分な水分、食料（おにぎり等）</li>
+                <li><span class="important">目印：</span> 家にある「緑色のもの」。レジ袋、タオルなど。</li>
+                <li><span class="important">体調：</span> 無理な外出は不要。自宅で休むことも立派な抗議です。</li>
+            </ul>
+        </div>
+
+        <h2>解散：17:00</h2>
+        <p>定時、その瞬間に一斉に解散します。静かに日常へ戻りましょう。<br>
+        <span class="important">※いつでも自由に帰宅して構いません。</span></p>
+
+        <p style="text-align:center; margin-top:80px; color:#444;">🟢 4.10 FRI 🟢 #9割側 #平日ボイコット計画</p>
+    </div>
+</div>
+
+<script>
+    function showDetail() {
+        document.getElementById('top-page').classList.add('slide-up');
+        setTimeout(() => {
+            document.getElementById('top-page').style.display = 'none';
+            document.getElementById('detail-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }, 800);
+    }
+</script>
+
+</body>
+</html>
