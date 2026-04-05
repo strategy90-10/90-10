@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,126 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>9割側の生存戦略 | 4月10日、自分を取り戻す</title>
     <style>
-        body { background-color: #000; color: #ddd; font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; overflow-x: hidden; }
-        #top-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
-        .container { max-width: 600px; padding: 20px; }
-        .chart-container { position: relative; width: 260px; height: 260px; margin: 0 auto 30px; border-radius: 50%; background: conic-gradient(#00c853 0% 90%, #ff1744 90% 100%); box-shadow: 0 0 40px rgba(0,200,83,0.2); }
-        .chart-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem; font-weight: bold; color: #fff; }
-        .question { font-size: 1.4rem; font-weight: bold; line-height: 1.8; margin-bottom: 40px; color: #fff; }
-        .btn-entry { font-size: 1.1rem; border: 1px solid #00c853; padding: 18px 40px; color: #00c853; cursor: pointer; background: transparent; transition: 0.4s; }
-        .btn-entry:hover { background: #00c853; color: #000; }
-        #detail-page { min-height: 100vh; padding: 60px 24px; display: none; background: #050505; }
-        .content { max-width: 680px; margin: 0 auto; line-height: 1.9; }
-        h2 { border-left: 4px solid #00c853; padding-left: 15px; color: #fff; margin-top: 50px; }
+        body { background-color: #000; color: #ddd; font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; line-height: 1.8; }
+        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; text-align: center; padding: 20px; border-bottom: 1px solid #222; }
+        .container { max-width: 680px; margin: 0 auto; padding: 40px 20px; }
+        .chart-container { position: relative; width: 220px; height: 220px; margin: 0 auto 30px; border-radius: 50%; background: conic-gradient(#00c853 0% 90%, #ff1744 90% 100%); box-shadow: 0 0 30px rgba(0,200,83,0.15); }
+        .chart-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; font-weight: bold; color: #fff; }
+        .hero-text { font-size: 1.5rem; font-weight: bold; color: #fff; margin-bottom: 20px; }
+        h1, h2 { color: #fff; border-left: 4px solid #00c853; padding-left: 15px; margin-top: 50px; }
+        h1 { border-left: none; padding-left: 0; color: #00e676; font-size: 1.8rem; }
         .accent-green { color: #00e676; }
         .important { color: #fff; font-weight: bold; text-decoration: underline #00c853; }
-        .list-box { background: #111; padding: 25px; border-radius: 4px; border: 1px solid #222; margin: 30px 0; }
-        .list-box li { margin-bottom: 15px; list-style-type: none; position: relative; }
-        .list-box li::before { content: "✅"; position: absolute; left: -30px; top: 2px; }
+        .list-box { background: #111; padding: 25px; border-radius: 4px; border: 1px solid #222; margin: 25px 0; }
+        .list-box li { margin-bottom: 15px; list-style-type: none; position: relative; padding-left: 10px; }
+        .list-box li::before { content: "✅"; position: absolute; left: -25px; }
         .x-day-box { background: linear-gradient(45deg, #004d40, #000); border: 2px solid #00e676; padding: 40px 20px; text-align: center; margin: 40px 0; border-radius: 8px; }
         .date-display { font-size: 3.5rem; font-weight: bold; color: #fff; margin: 10px 0; letter-spacing: 0.1em; }
-        .slide-up { transform: translateY(-100vh); }
+        footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<div id="top-page">
-    <div class="container">
-        <p style="color:#666; letter-spacing: 0.2em;">THE 90% STRATEGY</p>
-        <div class="chart-container"><div class="chart-label">90 : 10</div></div>
-        <div class="question">
-            誰かのために磨り減る毎日は、<br>
-            もう終わりにしませんか？
-        </div>
-        <button class="btn-entry" onclick="showDetail()">#9割側 として自分を取り戻す</button>
+<div class="hero">
+    <p style="color:#666; letter-spacing: 0.2em; margin-bottom: 20px;">THE 90% STRATEGY</p>
+    <div class="chart-container"><div class="chart-label">90 : 10</div></div>
+    <div class="hero-text">
+        誰かのために磨り減る毎日は、<br>
+        もう終わりにしませんか？
     </div>
+    <p style="color:#00c853; animate: bounce 2s infinite;">▼ 下にスクロールして詳細を確認</p>
 </div>
 
-<div id="detail-page">
-    <div class="content">
-        <h1 class="accent-green">4月10日、みんなで一斉に休みませんか？</h1>
-        <p>お疲れ様です、9割側の皆さん。<br>企業の内部留保 <span class="important">637兆円</span>。それは私たちが頑張った証です。<br>でも、その恩恵は届いていますか？<br>怒る必要はありません。ただ、4月10日（金）に「有給」を使って静かに休みましょう。</p>
-        
-        <div class="x-day-box">
-            <p style="margin:0; font-size: 1.2rem;">有給ボイコット決行日</p>
-            <div class="date-display">4.10 <span style="font-size: 1.5rem;">FRI</span></div>
-            <p style="margin:0; color:#00e676;">あなたがいないだけで、世界は変わる</p>
-        </div>
-
-        <h2>静かなる不在のルール</h2>
-        <div class="list-box">
-            <ul>
-                <li><span class="important">場所：</span> 集まる必要はありません。それぞれの自宅で、心穏やかに。</li>
-                <li><span class="important">方法：</span> 合法的な権利である「有給休暇」を行使してください。</li>
-                <li><span class="important">理由：</span> 「個人的な用事」で構いません。説明する義務もありません。</li>
-                <li><span class="important">目的：</span> 私たちがいないと社会が回らないことを、静かに証明すること。</li>
-            </ul>
-        </div>
-        <h2>一歩踏み出す、誠実さ</h2>
-         <h2>よくある質問（FAQ）</h2>
-        <div class="list-box">
-            <ul>
-                <li><span class="important">Q. 休むことで会社に迷惑がかかりませんか？</span><br>
-                A. 私たちがいないと回らない仕組み自体が、今の社会の歪みです。その「気づき」を会社に与えることも、一つの誠実さです。</li>
-                
-                <li><span class="important">Q. クビになったりしませんか？</span><br>
-                A. 有給休暇の取得を理由に、解雇などの不利益な扱いをすることは法律で禁じられています。正当な権利行使です。</li>
-
-                <li><span class="important">Q. 40%も集まらなかったら？</span><br>
-                A. たった一人でも「有給」を取れば、その日のあなたは自由です。その積み重ねが、いつか世界を動かす臨界点（40%）を超えます。</li>
-            </ul>
-        </div>
-        <h2>有給休暇は、あなたの最強の盾</h2>
-        <p>
-            「忙しい時期に休むのは悪い…」そう思う必要はありません。<br>
-            有給休暇は、法律（労働基準法39条）で守られた<span class="important">労働者の絶対的な権利</span>です。
-        </p>
-        <div class="list-box">
-            <ul>
-                <li><span class="important">理由：</span> 「私用のため」だけで100%通ります。根掘り葉掘り聞くのはタブーです。</li>
-                <li><span class="important">時季指定権：</span> あなたが「この日に休む」と言えば、原則として会社は拒否できません。</li>
-                <li><span class="important">4月の武器：</span> 多くの企業で有給がリセット・付与される4月は、私たちの「持ち弾」が最大になる時期です。</li>
-            </ul>
-        </div>
-        <p style="font-size: 0.9rem; color: #888;">※会社には「時季変更権」がありますが、40%が一斉に休む事態を個別に変更させるのは物理的に不可能です。</p>
-        <h2>なぜ「40%」が世界を変えるのか</h2>
-        <div class="list-box">
-            <p>最新のシミュレーションが示す、静かなる連鎖反応：</p>
-            <ul>
-                <li><span class="important">10%の不在：</span> 現場の努力でカバーできてしまう（日常）。</li>
-                <li><span class="important">25%の不在：</span> 配送・インフラに目に見える「遅延」が発生。</li>
-                <li><span class="important">40%の不在：</span> 相互補完システムが崩壊。経済活動が「強制停止」へ。</li>
-            </ul>
-            <p style="font-size: 0.9rem; color: #888;">※現代の最適化された物流・ITインフラは、4割の欠員を想定していません。</p>
-        </div>
-
-        <h2>金曜日に休む、戦略的な意味</h2>
-        <p>
-            なぜ4月10日（金）なのか。それは、土日を含めた<span class="important">「72時間の不在」</span>を作り出すためです。<br>
-            金曜に40%が消えれば、週明けのリカバリーは物理的に不可能になります。<br>
-            <br>
-            「週末の3連休を楽しむ」という個人的な幸せが、そのまま社会の歪みを正す最大の武器になる。これ以上にスマートな生存戦略はありません。
-        </p>
-        <p>石を投げる必要も、声を荒らげる必要もありません。<br>「休む」というあなたの誠実な選択が、9割側の未来を切り開く大きな力になります。<br>4月10日、最高の週末を迎えましょう。</p>
-        
-        <p style="text-align:center; margin-top:80px; color:#444;">🟢 4.10 FRI 🟢 #9割側 #自分を取り戻す日</p>
+<div class="container">
+    <h1>4月10日、みんなで一斉に休みませんか？</h1>
+    <p>お疲れ様です、9割側の皆さん。<br>企業の内部留保 <span class="important">637兆円</span>。それは私たちが頑張った証です。<br>でも、その恩恵は届いていますか？<br>怒る必要はありません。ただ、4月10日（金）に「有給」を使って静かに休みましょう。</p>
+    
+    <div class="x-day-box">
+        <p style="margin:0; font-size: 1.2rem;">有給ボイコット決行日</p>
+        <div class="date-display">4.10 <span style="font-size: 1.5rem;">FRI</span></div>
+        <p style="margin:0; color:#00e676;">あなたがいないだけで、世界は変わる</p>
     </div>
+
+    <h2>なぜ「40%」が世界を変えるのか</h2>
+    <div class="list-box">
+        <p>最新のシミュレーションが示す、静かなる連鎖反応：</p>
+        <ul>
+            <li><span class="important">10%の不在：</span> 現場の努力でカバーできてしまう（日常）。</li>
+            <li><span class="important">25%の不在：</span> 配送・インフラに目に見える「遅延」が発生。</li>
+            <li><span class="important">40%の不在：</span> バックアップ機能が崩壊。経済活動が「強制停止」へ。</li>
+        </ul>
+    </div>
+
+    <h2>金曜日に休む、戦略的な意味</h2>
+    <p>
+        なぜ4月10日（金）なのか。それは、土日を含めた<span class="important">「72時間の不在」</span>を作り出すためです。<br>
+        金曜に40%が消えれば、週明けのリカバリーは物理的に不可能になります。<br>
+        「週末の3連休を楽しむ」という幸せが、そのまま社会の歪みを正す最大の武器になります。
+    </p>
+
+    <h2>有給休暇は、あなたの最強の盾</h2>
+    <div class="list-box">
+        <ul>
+            <li><span class="important">理由：</span> 「私用のため」だけで100%通ります。</li>
+            <li><span class="important">時季指定権：</span> あなたが「この日に休む」と言えば、原則拒否できません。</li>
+            <li><span class="important">4月の武器：</span> 有給が付与・更新される4月は、私たちの権利が最大になる時期です。</li>
+        </ul>
+    </div>
+
+    <h2>よくある質問（FAQ）</h2>
+    <div class="list-box">
+        <ul>
+            <li><span class="important">Q. 休むことで会社に迷惑がかかりませんか？</span><br>
+            A. 私たちがいないと回らない仕組み自体が歪みです。その「気づき」を与えることも誠実さです。</li>
+            <li><span class="important">Q. クビになったりしませんか？</span><br>
+            A. 有給取得を理由にした不利益な扱いは法律で禁じられています。正当な権利です。</li>
+            <li><span class="important">Q. 40%も集まらなかったら？</span><br>
+            A. たった一人でも「有給」を取れば、その日のあなたは自由です。その一歩が世界を動かします。</li>
+        </ul>
+    </div>
+
+    <h2>一歩踏み出す、誠実さ</h2>
+    <p>石を投げる必要も、声を荒らげる必要もありません。<br>「休む」というあなたの誠実な選択が、9割側の未来を切り開く大きな力になります。<br>4月10日、最高の週末を迎えましょう。</p>
 </div>
 
-<script>
-    function showDetail() {
-        document.getElementById('top-page').classList.add('slide-up');
-        setTimeout(() => {
-            document.getElementById('top-page').style.display = 'none';
-            document.getElementById('detail-page').style.display = 'block';
-            window.scrollTo(0, 0);
-        }, 800);
-    }
-</script>
+<footer>
+    🟢 4.10 FRI 🟢 #9割側 #自分を取り戻す日
+</footer>
 
 <!-- 解析レーダー起動コード -->
-<script data-goatcounter="https://strategy90-10.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://goatcounter.com" async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
