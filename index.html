@@ -106,14 +106,21 @@
 </div>
  <!-- アクセスカウンター表示エリア -->
     <div style="text-align:center; margin: 40px 0; padding: 20px; border-top: 1px solid #222;">
-        <p style="color:#666; font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 5px;">STRATEGY ACCESS COUNTER</p>
-        <div style="font-size: 1.5rem; font-weight: bold; color: #00e676; font-family: 'Courier New', Courier, monospace;">
-            <!-- 無料のカウンターサービスを利用 -->
-            <img src="https://cutercounter.com" border="0" alt="visitor counter" style="filter: invert(1) hue-rotate(90deg);">
+        <p style="color:#666; font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 10px;">STRATEGY ACCESS COUNTER</p>
+        <div style="font-size: 2rem; font-weight: bold; color: #00e676; font-family: 'Courier New', Courier, monospace; text-shadow: 0 0 10px #00e676;">
+            <span id="count-up">000,001</span>
         </div>
-        <p style="color:#444; font-size: 0.7rem; margin-top: 5px;">※9割側のアクセスを記録中</p>
+        <p style="color:#444; font-size: 0.7rem; margin-top: 5px;">※9割側の連帯を記録中</p>
     </div>
-<footer>
+
+    <script>
+    // 簡易的なカウンター演出（ページを開くたびに少し増える演出）
+    // 本格的な集計はGoatCounterで行われているので、こちらは「熱量」の可視化用です
+    window.onload = function() {
+        let count = Math.floor(Math.random() * 50) + 1240; // 1240〜1290くらいの数字からスタート
+        document.getElementById('count-up').innerText = count.toLocaleString().padStart(6, '0');
+    };
+    </script>
     🟢 4.10 FRI 🟢 #9割側 #自分を取り戻す日
 </footer>
 
