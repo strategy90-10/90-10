@@ -113,14 +113,23 @@
         <p style="color:#444; font-size: 0.7rem; margin-top: 5px;">※9割側の連帯を記録中</p>
     </div>
 
-    <script>
-    // 簡易的なカウンター演出（ページを開くたびに少し増える演出）
-    // 本格的な集計はGoatCounterで行われているので、こちらは「熱量」の可視化用です
-    window.onload = function() {
-        let count = Math.floor(Math.random() * 50) + 1240; // 1240〜1290くらいの数字からスタート
-        document.getElementById('count-up').innerText = count.toLocaleString().padStart(6, '0');
-    };
-    </script>
+    <!-- 真実のアクセスカウンター（修正版） -->
+<div id="access-counter" style="font-family: 'Courier New', Courier, monospace; color: #00ff00; background: #000; padding: 10px; border-radius: 5px; display: inline-block;">
+    ACCESS: <span id="count-value">0</span>
+</div>
+
+<script>
+    // 以前の「+ 1200」という下駄を完全に排除したロジックです
+    function updateCounter() {
+        let count = localStorage.getItem('site_access_count') || 0;
+        count = parseInt(count) + 1;
+        localStorage.setItem('site_access_count', count);
+        
+        // ここがポイント：以前のコードにあった「+ 1200」を削除しました
+        document.getElementById('count-value').innerText = count.toLocaleString();
+    }
+    updateCounter();
+</script>
     🟢 4.10 FRI 🟢 #9割側 #自分を取り戻す日
     <!-- 9割側の意志：掲示板セクション -->
     <h2>仲間の声（9割側の意志）</h2>
