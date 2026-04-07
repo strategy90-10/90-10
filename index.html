@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9割側の生存戦略</title>
+    <title>9割側の生存戦略 | 4月10日</title>
     <style>
-        body { background-color: #000; color: #ddd; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; }
-        .video-wrapper { width: 100%; border: 1px solid #333; margin: 20px 0; background: #111; }
-        video { width: 100%; height: auto; }
-        #disqus_thread { margin-top: 50px; background: #fff; padding: 10px; border-radius: 4px; }
-        .date-display { font-size: 3rem; color: #00e676; font-weight: bold; }
+        body { background-color: #000; color: #ddd; font-family: sans-serif; margin: 0; text-align: center; }
+        .wrapper { max-width: 500px; margin: 0 auto; padding: 20px; }
+        .video-box { width: 100%; border: 1px solid #333; background: #111; margin-bottom: 30px; }
+        video { width: 100%; display: block; }
+        /* 掲示板が潰れないように高さを確保 */
+        #disqus_thread { min-height: 300px; margin-top: 40px; background: #fff; padding: 15px; border-radius: 8px; color: #000; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <p style="color:#666;">THE 90% STRATEGY</p>
+<div class="wrapper">
+    <h1 style="color:#00e676; font-size: 1.2rem;">THE 90% STRATEGY</h1>
     
-    <div class="video-wrapper">
+    <div class="video-box">
         <video controls playsinline autoplay muted loop>
             <source src="eida0408.mp4" type="video/mp4">
-            動画を再生できません
         </video>
     </div>
 
-    <div class="date-display">04.10</div>
-    <p>有給ボイコット決行まで、あとわずか。</p>
+    <div style="font-size: 2.5rem; font-weight: bold; color: #fff;">04.10</div>
+    <p>有給ボイコット、演算終了。</p>
 
-    <!-- 掲示板エリア -->
+    <!-- 掲示板 -->
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
-            this.page.url = window.location.href;
-            this.page.identifier = 'ada_project_main';
+            this.page.url = window.location.href.split('#')[0]; // URLを安定させる
+            this.page.identifier = 'ada_main_thread';
         };
         (function() {
             var d = document, s = d.createElement('script');
+            // 必ず https:// から始める
             s.src = 'https://disqus.com';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
