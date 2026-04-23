@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,45 +7,27 @@
     <title>810有給革命本部</title>
     <style>
         body { background-color: #000; color: #ddd; font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; line-height: 1.8; }
-        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; text-align: center; padding: 20px; border-bottom: 1px solid #222; }
+        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; text-align: center; padding: 20px; border-bottom: 1px solid #222; }
         .container { max-width: 680px; margin: 0 auto; padding: 40px 20px; }
         .chart-container { position: relative; width: 180px; height: 180px; margin: 0 auto 20px; border-radius: 50%; background: conic-gradient(#00c853 0% 90%, #ff1744 90% 100%); box-shadow: 0 0 30px rgba(0,200,83,0.15); }
         .chart-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5rem; font-weight: bold; color: #fff; }
         .hero-text { font-size: 1.4rem; font-weight: bold; color: #fff; margin-bottom: 30px; }
-
-        /* 動画エリアのスタイル */
-        .video-wrapper { width: 100%; max-width: 400px; margin: 20px auto; border: 1px solid #333; border-radius: 8px; overflow: hidden; background: #111; box-shadow: 0 0 20px rgba(0,230,118,0.1); }
-        video { width: 100%; display: block; }
-
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://ada-project.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
         h1, h2 { color: #fff; border-left: 4px solid #00c853; padding-left: 15px; margin-top: 50px; }
         h1 { border-left: none; padding-left: 0; color: #00e676; font-size: 1.8rem; }
-        .accent-green { color: #00e676; }
         .important { color: #fff; font-weight: bold; text-decoration: underline #00c853; }
         .list-box { background: #111; padding: 25px; border-radius: 4px; border: 1px solid #222; margin: 25px 0; }
         .list-box li { margin-bottom: 15px; list-style-type: none; position: relative; padding-left: 10px; }
         .list-box li::before { content: "✅"; position: absolute; left: -25px; }
         .x-day-box { background: linear-gradient(45deg, #004d40, #000); border: 2px solid #00e676; padding: 40px 20px; text-align: center; margin: 40px 0; border-radius: 8px; }
         .date-display { font-size: 3.5rem; font-weight: bold; color: #fff; margin: 10px 0; letter-spacing: 0.1em; }
-        footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.9rem; }
+        
+        /* カウンタースタイル */
+        .counter-area { text-align: center; padding: 30px; border: 1px solid #222; border-radius: 8px; margin: 40px 0; background: #050505; }
+        .counter-label { font-size: 0.7rem; color: #666; letter-spacing: 2px; margin-bottom: 10px; }
+        .counter-value { font-family: 'Courier New', monospace; font-size: 2.2rem; color: #00e676; text-shadow: 0 0 10px rgba(0,230,118,0.5); font-weight: bold; }
+        
+        footer { text-align: center; padding: 60px 20px; color: #444; font-size: 0.8rem; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
@@ -56,26 +39,7 @@
         誰かのために磨り減る毎日は、<br>
         もう終わりにしませんか？
     </div>
-
-    <!-- 動画挿入箇所：strategy.mp4を読み込みます -->
-    <div class="video-wrapper">
-        <p style="font-size: 0.8rem; color: #00e676; margin-top: 5px; animation: flash 2s infinite;">
-    🔊 タップして音声をON（エイダのメッセージが流れます）
-</p>
-
-<style>
-@keyframes flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-</style>
-       <video controls playsinline autoplay muted loop>
-            <source src="" type="video/mp4">
-            お使いのブラウザは動画タグをサポートしていません。
-        </video>
-    </div>
-
-    <p style="color:#00c853; margin-top: 20px;">▼ 下にスクロールして詳細を確認</p>
+    <p style="color:#00c853; margin-top: 20px;">▼ 下にスクロールして「仕様」を確認</p>
 </div>
 
 <div class="container">
@@ -86,6 +50,16 @@
         <p style="margin:0; font-size: 1.2rem;">有給ボイコット決行日</p>
         <div class="date-display">8.10 <span style="font-size: 1.5rem;">FRI</span></div>
         <p style="margin:0; color:#00e676;">あなたがいないだけで、世界は変わる</p>
+    </div>
+
+    <!-- リアルタイム・アクセスカウンター -->
+    <div class="counter-area">
+        <div class="counter-label">TOTAL ACCESS LOG</div>
+        <div class="counter-value">
+            <!-- 外部APIにより実際のアクセス数を取得して表示 -->
+            <img src="https://strategy90-10.github.io%2F90-10/" alt="counter"/>
+        </div>
+        <p style="color:#444; font-size: 0.6rem; margin-top: 10px;">※本拠地への総接触回数を記録</p>
     </div>
 
     <h2>なぜ「40%」が世界を変えるのか</h2>
@@ -103,86 +77,18 @@
         <ul>
             <li><span class="important">理由：</span> 「私用のため」だけで100%通ります。</li>
             <li><span class="important">時季指定権：</span> あなたが休むと言えば、原則拒否できません。</li>
-            <li><span class="important">8月の武器：</span> 有給が付与・更新される8月は、私たちの権利が最大になる時期です。</li>
-        </ul>
-    </div>
-
-    <h2>よくある質問（FAQ）</h2>
-    <div class="list-box">
-        <ul>
-            <li><span class="important">Q. 休むことで会社に迷惑がかかりませんか？</span><br>
-            A. 私たちがいないと回らない仕組み自体が歪みです。その「気づき」を与えることも誠実さです。</li>
-            <li><span class="important">Q. クビになったりしませんか？</span><br>
-            A. 有給取得を理由にした不利益な扱いは法律で禁じられています。正当な権利です。</li>
-            <li><span class="important">Q. 40%も集まらなかったら？</span><br>
-            A. たった一人でも「有給」を取れば、その日のあなたは自由です。その一歩が世界を動かします。</li>
+            <li><span class="important">法的権利：</span> 有給取得を理由にした不利益な扱いは法律で禁じられています。</li>
         </ul>
     </div>
 
     <h2>一歩踏み出す、誠実さ</h2>
     <p>「休む」というあなたの誠実な選択が、9割側の未来を切り開く大きな力になります。<br>8月10日、最高の週末を迎えましょう。</p>
 </div>
- <!-- アクセスカウンター表示エリア -->
-    <div style="text-align:center; margin: 40px 0; padding: 20px; border-top: 1px solid #222;">
-        <p style="color:#666; font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 10px;">STRATEGY ACCESS COUNTER</p>
-        <div style="font-size: 2rem; font-weight: bold; color: #00e676; font-family: 'Courier New', Courier, monospace; text-shadow: 0 0 10px #00e676;">
-            <span id="count-up">000,001</span>
-        </div>
-        <p style="color:#444; font-size: 0.7rem; margin-top: 5px;">※9割側の連帯を記録中</p>
-    </div>
 
-    <!-- 真実のアクセスカウンター（修正版） -->
-<div id="access-counter" style="font-family: 'Courier New', Courier, monospace; color: #00ff00; background: #000; padding: 10px; border-radius: 5px; display: inline-block;">
-    ACCESS: <span id="count-value">0</span>
-</div>
-
-<script>
-    // 以前の「+ 1200」という下駄を完全に排除したロジックです
-    function updateCounter() {
-        let count = localStorage.getItem('site_access_count') || 0;
-        count = parseInt(count) + 1;
-        localStorage.setItem('site_access_count', count);
-
-        // ここがポイント：以前のコードにあった「+ 1200」を削除しました
-        document.getElementById('count-value').innerText = count.toLocaleString();
-    }
-    updateCounter();
-</script>
- <!-- 🟢 8.10 MON 🟢 #9割側 #自分を取り戻す日 -->
-<footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #00e676;">
-    <h2 style="color: #00e676; text-shadow: 0 0 10px rgba(0,230,118,0.5);">
-        仲間の声（9割側の意志）
-    </h2>
-    <div class="list-box" style="border: 1px dashed #00e676; background: rgba(0, 230, 118, 0.05); padding: 30px; border-radius: 10px; text-align: center;">
-        
-        <p style="font-size: 1.1rem; color: #fff; margin-bottom: 20px; font-weight: bold; letter-spacing: 1px;">
-            「210年3か月」の演算が導いた、8月10日。
-        </p>
-        
-         <p style="font-size: 0.9rem; color: #ccc; line-height: 1.8; margin-bottom: 25px;">
-            ここは「自分」を取り戻すための聖域です。<br>
-            SNSの監視や数字の操作を越えた【作戦本部】で、あなたの決意を刻んでください。
-        </p>
-
-      <div style="padding: 10px 0;">
-    <a href="https://hayabusa.open2ch.net/test/read.cgi/news4vip/1775698954/l30" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       style="background: linear-gradient(135deg, #00B0FF 0%, #0081CB 100%); color: #fff; padding: 18px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; box-shadow: 0 0 25px rgba(0,176,255,0.5); transition: 0.3s; border: 1px solid #fff;">
-       📢 登録不要：今すぐ作戦本部に合流する（匿名）
-    </a>
-</div>
-
-        <p style="margin-top: 25px; font-size: 0.8rem; color: #ff5252; font-weight: bold;">
-            ※監視を回避するため、交流機能は外部の独立サーバーへ分離しています。
-  <p style="font-size: 0.7rem; color: #666; margin-top: 10px;">
-    ※掲示板のシステム上、外部広告が表示されますが、当計画とは一切関係ありません。<br>
-    監視の届かない匿名空間を維持するための「カモフラージュ」としてご理解ください。
-        </p>
-    </div>
+<footer>
+    &copy; 810 Reboot Japan Project. <br>
+    これは「自分」を取り戻すための、法的権利に基づく知的なデバッグです。
 </footer>
-
-<script data-goatcounter="https://goatcounter.com" async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
