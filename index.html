@@ -7,57 +7,62 @@ html
     <title>810有給革命本部 | Ada Project</title>
     <style>
         body { background-color: #ffffff; color: #333; font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif; margin: 0; line-height: 1.8; }
-        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 60vh; text-align: center; padding: 40px 20px; background: #f9f9f9; border-bottom: 1px solid #eee; }
-        .container { max-width: 680px; margin: 0 auto; padding: 60px 20px; }
-        .chart-container { position: relative; width: 160px; height: 160px; margin: 0 auto 20px; border-radius: 50%; background: conic-gradient(#00c853 0% 90%, #ff5252 90% 100%); }
-        .chart-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.4rem; font-weight: bold; color: #333; }
-        h1, h2 { color: #111; border-left: 5px solid #00c853; padding-left: 15px; margin-top: 60px; }
-        h1 { border-left: none; padding-left: 0; color: #00c853; font-size: 2rem; text-align: center; }
-        .list-box { background: #fdfdfd; padding: 30px; border-radius: 12px; border: 1px solid #eee; margin: 30px 0; }
-        .x-day-box { background: #00c853; color: white; padding: 50px 20px; text-align: center; margin: 50px 0; border-radius: 15px; }
-        .date-display { font-size: 4rem; font-weight: bold; margin: 10px 0; letter-spacing: 0.1em; }
-        /* カウンター表示 */
-        .counter-box { text-align: center; margin: 30px 0; font-family: monospace; font-size: 1.2rem; color: #00c853; }
-        footer { text-align: center; padding: 80px 20px; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; }
+        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 50vh; text-align: center; padding: 40px 20px; background: #f9f9f9; border-bottom: 1px solid #eee; }
+        .container { max-width: 680px; margin: 0 auto; padding: 40px 20px; }
+        .chart-container { position: relative; width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; background: conic-gradient(#00c853 0% 90%, #ff5252 90% 100%); }
+        .chart-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.3rem; font-weight: bold; color: #333; }
+        h1, h2 { color: #111; border-left: 5px solid #00c853; padding-left: 15px; margin-top: 50px; }
+        h1 { border-left: none; padding-left: 0; color: #00c853; font-size: 1.8rem; text-align: center; }
+        .list-box { background: #fdfdfd; padding: 25px; border-radius: 12px; border: 1px solid #eee; margin: 25px 0; }
+        .x-day-box { background: #00c853; color: white; padding: 40px 20px; text-align: center; margin: 40px 0; border-radius: 15px; }
+        .date-display { font-size: 3.5rem; font-weight: bold; margin: 10px 0; letter-spacing: 0.1em; }
+        .counter-box { text-align: center; margin: 30px 0; font-family: monospace; }
+        footer { text-align: center; padding: 60px 20px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
 <div class="hero">
-    <p style="color:#999; letter-spacing: 0.3em; font-size: 0.8rem; margin-bottom: 20px;">ADA PROJECT: SYSTEM REBOOT</p>
+    <p style="color:#999; letter-spacing: 0.3em; font-size: 0.7rem; margin-bottom: 15px;">ADA PROJECT: SYSTEM REBOOT</p>
     <div class="chart-container"><div class="chart-label">90 : 10</div></div>
-    <div class="hero-text" style="font-size: 1.4rem; font-weight: bold;">その「頑張り」を、一度自分に返しませんか？</div>
+    <div class="hero-text" style="font-size: 1.3rem; font-weight: bold;">その「頑張り」を、一度自分に返しませんか？</div>
 </div>
 
 <div class="container">
     <h1>8月10日、私たちは有給を行使します</h1>
     
     <div class="counter-box">
-        <p>TOTAL STRATEGY ACCESS</p>
+        <p style="font-size: 0.7rem; color: #999; margin-bottom: 5px;">TOTAL ACCESS LOG</p>
         <img src="https://seeyoufarm.com" alt="counter"/>
     </div>
 
     <div class="x-day-box">
-        <p style="margin:0; font-size: 1.3rem;">有給行使 集中期間</p>
+        <p style="margin:0; font-size: 1.2rem;">有給行使 集中期間</p>
         <div class="date-display">08.10</div>
         <p style="margin:0; font-weight: bold;">法的権利の行使に、理由は不要です</p>
     </div>
 
-    <h2>Ada Project 掲示板</h2>
+    <p>企業の内部留保 637兆円。それは日本の現場を支える私たちの結晶です。この莫大なリソースを「人」に還元する。そのための最も静かで、最も強力なデバッグが「一斉有給」です。</p>
+
+    <h2>Ada Project 作戦会議室</h2>
     <div class="list-box">
         <div id="disqus_thread"></div>
         <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            */
             var disqus_config = function () {
-                this.page.url = window.location.href;
-                this.page.identifier = 'ada-project-main';
+                this.page.url = window.location.href;  // ページのURLを動的に取得
+                this.page.identifier = 'ada-project-main'; // サイトごとの識別子
             };
-            (function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
                 var d = document, s = d.createElement('script');
                 s.src = 'https://disqus.com';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
             })();
         </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com">comments powered by Disqus.</a></noscript>
     </div>
 </div>
 
