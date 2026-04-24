@@ -5,112 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ada Project | 日本OSデバッグ宣言</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        header {
-            width: 100%;
-            padding: 80px 20px;
-            text-align: center;
-            background: #fdfdfd;
-            border-bottom: 1px solid #eee;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .container {
-            max-width: 800px;
-            padding: 40px 20px;
-        }
-        .countdown-container {
-            background: #000;
-            color: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .countdown-title {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #ccc;
-        }
-        #timer {
-            font-size: 3rem;
-            font-weight: bold;
-            font-variant-numeric: tabular-nums;
-        }
-        .section {
-            margin-bottom: 60px;
-        }
-        .section h2 {
-            font-size: 1.8rem;
-            border-left: 4px solid #000;
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-        .highlight {
-            background: linear-gradient(transparent 70%, #ffff00 70%);
-            font-weight: bold;
-        }
-        footer {
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #888;
-        }
-    .call-to-action {
-        background: #f9f9f9;
-        border: 1px solid #ddd;
-        padding: 30px;
-        border-radius: 15px;
-        margin: 40px 0;
-    }
-    .achievement-bar {
-        width: 100%;
-        background: #eee;
-        border-radius: 10px;
-        height: 30px;
-        margin: 20px 0;
-        overflow: hidden;
-    }
-    .progress {
-        width: 10%; /* 拡散に合わせてここを更新 */
-        background: #000;
-        height: 100%;
-        transition: width 1s;
-    }
-    .bbs-section {
-        background: #fff;
-        border: 2px solid #000;
-        padding: 20px;
-        margin-top: 50px;
-    }
+        body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; line-height: 1.8; color: #333; background: #fff; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; padding: 60px 0; border-bottom: 1px solid #eee; }
+        h1 { font-size: 2.2rem; letter-spacing: -0.05em; }
+        .countdown-card { background: #000; color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0; }
+        #timer { font-size: 2.5rem; font-weight: bold; }
+        .section { margin-bottom: 50px; }
+        .section h2 { font-size: 1.5rem; border-left: 5px solid #000; padding-left: 15px; margin-bottom: 20px; }
+        .highlight { background: #ffff00; font-weight: bold; padding: 0 5px; }
+        
+        /* 掲示板セクション（100%確実に動くUI） */
+        .bbs-box { background: #f4f4f4; border: 2px solid #000; padding: 30px; border-radius: 10px; text-align: center; }
+        .btn-bbs { display: inline-block; background: #000; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
+        .btn-bbs:hover { background: #333; }
+        
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
     </style>
-<!-- コンテンツの追加部分 -->
-<div class="container">
-    
-    <!-- 達成率メーター -->
-    <div class="section">
-        <h2>【目標】国民の40%が動けば、OSは書き換わる</h2>
-        <p>全員である必要はありません。9割の庶民のうち、40%が同時に有給を行使した瞬間、この国の「犠牲のシステム」は維持不可能になります。</p>
-        <div class="achievement-bar">
-            <div class="progress" style="width: 15%;"></div> <!-- 2.6万人の拡散を反映して15%と仮定 -->
-        </div>
-        <p style="text-align: right; font-size: 0.9rem;">現在：約15%（2.6万人の共鳴） / 目標：40%</p>
-    </div>
-
-    </div>
 </head>
 <body>
 
@@ -121,65 +32,44 @@
 
 <div class="container">
     
-    <div class="countdown-container">
-        <div class="countdown-title">8.10 有給ボイコット（一斉デバッグ）まで</div>
-        <div id="timer">Loading...</div>
+    <!-- カウントダウン -->
+    <div class="countdown-card">
+        <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 10px;">8.10 有給ボイコットまで</div>
+        <div id="timer">計測中...</div>
+        <div style="margin-top: 10px; font-size: 0.8rem; color: #888;">現在：約2.6万人の共鳴（目標：国民の40%）</div>
     </div>
 
+    <!-- 地政学各論 -->
     <div class="section">
         <h2>【地政学各論】トロッコの「1」にされた日本</h2>
-        <p>地政学の視点に立てば、米国が世界で最も有利な位置にあることは、地図を一目見れば明白です。二つの大海に守られ、自国のみで自給自足が可能な「要塞」であり、それは「戦争における勝率」が世界で最も高いことを意味します。</p>
-        <p>しかし今、その米国自身も深刻な貧富の差という内患を抱え、国威を維持するために膨大な国費を必要としています。そこで彼らが取った戦略が、弱みを握る「日本」のターゲット化です。米国（5人）を活かすために、日本（1人）を犠牲にする。これが我々が直面している構造的欠陥の正体です。</p>
+        <p>世界地図を見れば明白です。米国は自給自足可能な「要塞」であり、戦争の勝率が最も高い。その米国が内患（貧富の差）を解消するために選んだのが、日本を「犠牲の1人」にするトロッコ問題の強行です。我々は米国を活かすための部品にされています。</p>
     </div>
 
+    <!-- 構造的搾取 -->
     <div class="section">
-        <h2>【構造的搾取】無自覚な貧困化の正体</h2>
-        <p>「3億あっても不安」なのは、個人の努力不足ではありません。国家OSに「国民の安心」というコードが書かれていないからです。米国のシステムを支えるためのコストは、巧妙に<span class="highlight">「9割の庶民」</span>へと転嫁されています。</p>
-        <p>増税、物価高、上がらない賃金。我々は、自給自足可能な大国を支えるための「使い捨ての部品」として、無自覚なまま貧困の深淵へと突き落とされています。</p>
+        <h2>【構造的搾取】無自覚な貧困化</h2>
+        <p>「3億あっても不安」なのは、国家OSに安心のコードがないから。増税、物価高、低賃金。<span class="highlight">9割の庶民</span>は、大国を支えるための使い捨ての部品として、無自覚に搾取され続けています。</p>
     </div>
 
+    <!-- 解決策 -->
     <div class="section">
-        <h2>【唯一の解】「8.10 有給ボイコット」の意義</h2>
-        <p>この強固な搾取構造に対し、個人が取れる最も合理的で合法的な抵抗。それが<span class="highlight">「有給ボイコット（一斉デバッグ）」</span>です。</p>
-        <ul>
-            <li><strong>システムの一時停止：</strong> 9割の国民が立ち止まり、暴走するトロッコにブレーキをかける。</li>
-            <li><strong>常識の上書き：</strong> 有給取得は権利の行使であり、システムのメンテナンスであるという新常識を確立する。</li>
-            <li><strong>無言の圧力：</strong> 暴力ではなく「法的権利の同時行使」により、我々が盲目的な部品ではないことを知らしめる。</li>
-        </ul>
-        <p>これは単なる休暇ではありません。日本という国を、我々庶民の手に取り戻すための「静かなる再起動（リブート）」です。</p>
+        <h2>【解決策】8.10 有給ボイコット</h2>
+        <p>「有給を取る勇気がない」という方へ。あなたはサボるのではなく、<span class="highlight">「国家OSのデバッグ」</span>という公務を執行するのです。40%が同時に休めば、システムは止まり、再起動が始まります。</p>
+    </div>
+
+    <!-- 掲示板（100%確実に開く） -->
+    <div class="bbs-box">
+        <h3>作戦会議室（掲示板）</h3>
+        <p>現在、2.6万人のアクセスによる負荷軽減のため、外部入力フォームを掲示板として稼働させています。</p>
+        <p style="font-size: 0.9rem;">※送信された意見は、このページで順次公開・反映されます。</p>
+        <!-- 下記のURLを自分のGoogleフォーム等に書き換えるだけで完成 -->
+        <a href="https://google.com" class="btn-bbs" target="_blank">意見を書き込む・参加表明</a>
     </div>
 
 </div>
-<!-- コンテンツの追加部分 -->
-<div class="container">
-    
-    <!-- 達成率メーター -->
-    <div class="section">
-        <h2>【目標】国民の40%が動けば、OSは書き換わる</h2>
-        <p>全員である必要はありません。9割の庶民のうち、40%が同時に有給を行使した瞬間、この国の「犠牲のシステム」は維持不可能になります。</p>
-        <div class="achievement-bar">
-            <div class="progress" style="width: 15%;"></div> <!-- 2.6万人の拡散を反映して15%と仮定 -->
-        </div>
-        <p style="text-align: right; font-size: 0.9rem;">現在：約15%（2.6万人の共鳴） / 目標：40%</p>
-    </div>
 
-    <!-- 勇気が出ない人へのメッセージ -->
-    <div class="call-to-action">
-        <h3>「有給を取る勇気がない」あなたへ</h3>
-        <p>あなたは「サボる」のではありません。日本という国の致命的なバグを修正するために、<span class="highlight">「デバッグという公務」</span>を執行するのです。あなたが立ち止まることは、次の世代に「犠牲のレール」を引き継がないための、最も勇敢な決断です。</p>
-    </div>
-
-    <!-- 簡易掲示板（意見収集ボックス） -->
-    <div class="bbs-section" id="bbs">
-        <h2>作戦会議室（掲示板）</h2>
-        <p>サーバー負荷軽減のため、現在はGoogleフォームによる「声の集積」を行っています。ここに集まった声は、HP上で順次公開されます。</p>
-        <!-- ここにご自身のGoogleフォームのURLを貼ってください -->
-        <a href="https://google.com..." target="_blank" style="display: block; background: #000; color: #fff; text-align: center; padding: 15px; text-decoration: none; border-radius: 5px;">掲示板に意見を書き込む</a>
-    </div>
-
-</div>
 <footer>
-    &copy; Ada Project - All Access Recorded by Google Analytics.
+    &copy; Ada Project - Logic by Logic. All Rights Reserved.
 </footer>
 
 <script>
@@ -187,12 +77,10 @@
         const target = new Date('2026-08-10T00:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
-
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
-
         document.getElementById('timer').innerHTML = d + "日 " + h + "時間 " + m + "分 " + s + "秒 ";
     }
     setInterval(updateTimer, 1000);
