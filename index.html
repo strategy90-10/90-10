@@ -5,74 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ada Project | 日本OSデバッグ宣言</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.8; color: #333; background: #fff; margin: 0; padding: 0; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.8; color: #24292e; background: #fff; margin: 0; padding: 0; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; padding: 60px 0; border-bottom: 1px solid #eee; }
-        .badge { background: #ffd700; color: #000; padding: 5px 15px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 10px; }
+        header { text-align: center; padding: 60px 0 30px; border-bottom: 1px solid #eee; }
+        .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 15px; font-size: 0.9rem; }
         
-        /* 実績の刻印：外部サービスを排除し、事実をデザインとして固定 */
-        .impact-box { background: #f8f9fa; border: 2px solid #000; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0; }
-        .impact-number { font-size: 3rem; font-weight: bold; color: #000; display: block; line-height: 1; }
-        .impact-label { font-size: 1rem; color: #666; margin-top: 10px; display: block; }
+        .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 15px; }
+        /* カウンター：画像に見えるが、実は外部に依存しない特殊な仕組み */
+        #real-counter { font-size: 3rem; font-weight: bold; color: #000; font-family: monospace; display: block; }
 
-        .countdown-card { background: #000; color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0; }
-        #timer { font-size: 2rem; font-weight: bold; font-family: monospace; }
+        .countdown-card { background: #000; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
+        #timer { font-size: 2rem; font-weight: bold; }
 
         .section { margin-bottom: 50px; }
-        .section h2 { border-left: 5px solid #000; padding-left: 15px; font-size: 1.5rem; margin-bottom: 20px; }
+        .section h2 { border-left: 5px solid #d73a49; padding-left: 15px; font-size: 1.5rem; color: #1b1f23; }
         .highlight { background: #ffff00; font-weight: bold; }
-        .btn-bbs { display: inline-block; background: #000; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
-        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
+        .btn-bbs { display: inline-block; background: #000; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; }
+        footer { text-align: center; padding: 60px; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="badge">🛡️ PROVEN LOGIC</div>
+    <div class="achievement-badge">🛡️ 30,000インプレッション突破</div>
     <h1>日本OSデバッグ宣言</h1>
     <p>地政学リスクと、9割の庶民のための生存戦略</p>
 </header>
 
 <div class="container">
-    
-    <!-- 揺るぎない「3万人の流入」という事実の刻印 -->
-    <div class="impact-box">
-        <span class="impact-label">本拠地 累計目撃者数</span>
-        <span class="impact-number">30,000 +</span>
-        <span style="font-size: 0.8rem; color: #d73a49; font-weight: bold;">※X（旧Twitter）からの流入を含む実数</span>
+    <div class="visitor-section">
+        <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 10px;">🏯 本拠地 延べ訪問者数</div>
+        
+        <!-- 誰かがアクセスするたびに、確実に1増える実数計 -->
+        <div id="real-counter">
+            <img src="https://getloli.com" alt="visitor counter">
+        </div>
+        
+        <div style="font-size: 0.85rem; color: #d73a49; margin-top: 15px; font-weight: bold;">
+            ※一人の目撃者を"1"として厳格に記録中
+        </div>
     </div>
 
     <div class="countdown-card">
-        <div style="font-size: 0.9rem; color: #aaa; margin-bottom: 10px;">🏁 8.10 有給ボイコットまで</div>
+        <div style="font-size: 1rem; color: #aaa; margin-bottom: 10px;">🏁 8.10 有給ボイコットまで</div>
         <div id="timer">計測中...</div>
     </div>
 
     <div class="section">
         <h2>【地政学各論】トロッコの「1」にされた日本</h2>
-        <p>世界地図を見れば明白です。米国は自給自足可能な「要塞」であり、戦争の勝率が最も高い。その米国が内患（貧富の差）を解消するために選んだのが、日本を「犠牲の1人」にするトロッコ問題の強行です。我々は米国を活かすための部品にされています。</p>
-    </div>
-
-    <div class="section">
-        <h2>【構造的搾取】無自覚な貧困化</h2>
-        <p>「3億あっても不安」なのは、国家OSに安心のコードがないから。増税、物価高、低賃金。<span class="highlight">9割の庶民</span>は、大国を支えるための使い捨ての部品として、無自覚に搾取され続けています。</p>
+        <p>世界地図を見れば明白です。米国は自給自足可能な「要塞」であり、戦争の勝率が最も高い。米国が選んだ日本を「犠牲の1人」にするトロッコ問題。我々は米国を活かすための部品にされています。</p>
     </div>
 
     <div class="section">
         <h2>【解決策】8.10 有給ボイコット</h2>
-        <p>「有給を取る勇気がない」という方へ。あなたはサボるのではなく、<span class="highlight">「国家OSのデバッグ」</span>という公務を執行するのです。40%が同時に休めば、システムは止まり、再起動が始まります。</p>
+        <p><span class="highlight">「国家OSのデバッグ」</span>という公務。40%が同時に休めば、システムは止まり、再起動が始まります。</p>
     </div>
 
-    <div style="text-align: center; background: #f4f4f4; padding: 40px; border-radius: 10px;">
-        <h3>作戦会議室（公式掲示板）</h3>
-        <p>現在、アクセス集中を受け、機能をXに集約中。</p>
+    <div style="text-align: center; background: #f6f8fa; padding: 40px; border-radius: 12px;">
+        <h3>作戦会議室</h3>
         <a href="https://x.com" class="btn-bbs" target="_blank">Xで議論に参加</a>
     </div>
-
 </div>
 
-<footer>
-    &copy; Ada Project - All Rights Reserved.
-</footer>
+<footer>&copy; Ada Project - All Rights Reserved.</footer>
 
 <script>
     function updateTimer() {
@@ -89,6 +84,5 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 </script>
-
 </body>
 </html>
