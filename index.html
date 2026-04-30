@@ -16,10 +16,11 @@
         .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #fff; border: 1px solid #eaecef; border-radius: 15px; }
         .visitor-label { font-size: 0.95rem; font-weight: bold; color: #333; margin-bottom: 15px; }
         .real-counter-wrapper { border: 2px solid #eee; padding: 10px; display: inline-block; border-radius: 8px; background: #fafafa; }
+        /* リンクを無効化する設定 */
+        .real-counter-wrapper img { pointer-events: none; cursor: default; }
 
         /* カウントダウン */
         .countdown-card { background: #1b1f23; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .timer-label { font-size: 1rem; color: #adb5bd; margin-bottom: 10px; }
         #timer { font-size: 2rem; font-weight: 700; font-family: 'Courier New', Courier, monospace; }
 
         .section { margin-bottom: 50px; background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eaecef; }
@@ -28,8 +29,6 @@
 
         .bbs-box { background: #f6f8fa; border: 1px solid #d1d5da; padding: 40px; border-radius: 12px; text-align: center; }
         .btn-bbs { display: inline-block; background: #24292e; color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; min-width: 220px; margin: 5px; }
-        .btn-bbs:hover { background: #444; }
-        .btn-sub { background: #fff; color: #24292e; border: 1px solid #d1d5da; }
         footer { text-align: center; padding: 60px; color: #6a737d; font-size: 0.85rem; border-top: 1px solid #eaecef; }
     </style>
 </head>
@@ -44,12 +43,10 @@
 <div class="container">
     
     <div class="visitor-section">
-        <div class="visitor-label">🏯 本拠地 延べ訪問者数（実数値・重複排除）</div>
+        <div class="visitor-label">🏯 本拠地 延べ訪問者数（実数値集計）</div>
         <div class="real-counter-wrapper">
-            <!-- 重複カウントを弾く厳格な実数カウンター -->
-            <a href="https://free-counter.jp">
-                <img src="https://free-counter.jpcount/20240501002014476140510/" alt="無料カウンター" border="0">
-            </a>
+            <!-- リンクを除去し、画像のみを表示。重複カウントも弾きます -->
+            <img src="https://free-counter.jp" alt="visitor counter" border="0">
         </div>
         <div style="font-size: 0.85rem; color: #d73a49; margin-top: 15px; font-weight: bold;">
             ※同一人物の連打を弾き、新規目撃者のみを厳格に記録中
@@ -57,7 +54,7 @@
     </div>
 
     <div class="countdown-card">
-        <div class="timer-label">🏁 8.10 有給ボイコットまで</div>
+        <div style="font-size: 1rem; color: #adb5bd; margin-bottom: 10px;">🏁 8.10 有給ボイコットまで</div>
         <div id="timer">計測中...</div>
     </div>
 
@@ -82,7 +79,7 @@
             現在、アクセス集中を受け、議論の透明性とリアルタイム性を確保するため、機能をX（旧Twitter）に集約しています。
         </p>
         <a href="https://x.com" class="btn-bbs" target="_blank">Xで議論に参加</a><br>
-        <a href="https://open2ch.net" class="btn-bbs btn-sub" target="_blank">おーぷん2ch（避難所）</a>
+        <a href="https://open2ch.net" class="btn-bbs btn-sub" style="background:#fff; color:#24292e; border:1px solid #d1d5da;" target="_blank">おーぷん2ch（避難所）</a>
     </div>
 </div>
 
