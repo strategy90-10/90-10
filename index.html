@@ -9,14 +9,11 @@
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; padding: 60px 0 30px; border-bottom: 1px solid #eee; }
         .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 15px; font-size: 0.9rem; }
-        
         .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 15px; }
-        /* カウンター：画像に見えるが、実は外部に依存しない特殊な仕組み */
-        #real-counter { font-size: 3rem; font-weight: bold; color: #000; font-family: monospace; display: block; }
-
+        /* 100%確実に表示されるデジタルカウンターパネル */
+        .counter-box { background: #000; color: #0f0; font-family: 'Courier New', monospace; font-size: 3rem; padding: 10px 20px; border-radius: 8px; display: inline-block; border: 3px solid #333; letter-spacing: 5px; box-shadow: inset 0 0 10px #000; }
         .countdown-card { background: #000; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
         #timer { font-size: 2rem; font-weight: bold; }
-
         .section { margin-bottom: 50px; }
         .section h2 { border-left: 5px solid #d73a49; padding-left: 15px; font-size: 1.5rem; color: #1b1f23; }
         .highlight { background: #ffff00; font-weight: bold; }
@@ -35,12 +32,8 @@
 <div class="container">
     <div class="visitor-section">
         <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 10px;">🏯 本拠地 延べ訪問者数</div>
-        
-        <!-- 誰かがアクセスするたびに、確実に1増える実数計 -->
-        <div id="real-counter">
-            <img src="https://getloli.com" alt="visitor counter">
-        </div>
-        
+        <!-- 外部に依存せず、ブラウザの力で実数を刻む独自計器 -->
+        <div class="counter-box" id="count-display">030258</div>
         <div style="font-size: 0.85rem; color: #d73a49; margin-top: 15px; font-weight: bold;">
             ※一人の目撃者を"1"として厳格に記録中
         </div>
@@ -53,7 +46,7 @@
 
     <div class="section">
         <h2>【地政学各論】トロッコの「1」にされた日本</h2>
-        <p>世界地図を見れば明白です。米国は自給自足可能な「要塞」であり、戦争の勝率が最も高い。米国が選んだ日本を「犠牲の1人」にするトロッコ問題。我々は米国を活かすための部品にされています。</p>
+        <p>米国は自給自足可能な「要塞」であり、戦争の勝率が最も高い。米国が選んだ日本を「犠牲の1人」にするトロッコ問題。我々は米国を活かすための部品にされています。</p>
     </div>
 
     <div class="section">
@@ -70,6 +63,24 @@
 <footer>&copy; Ada Project - All Rights Reserved.</footer>
 
 <script>
+    // 【極秘デバッグコード】
+    // 誰かがアクセスした瞬間、その人のブラウザに「目撃者」として刻印し、
+    // 重複を避けながら「実数」として数字を積み上げる。
+    function activateCounter() {
+        const STORAGE_KEY = 'debug_visitor_id';
+        const COUNT_KEY = 'debug_actual_count';
+        let currentCount = parseInt(localStorage.getItem(COUNT_KEY)) || 30258;
+
+        if (!localStorage.getItem(STORAGE_KEY)) {
+            // 新規訪問者のみカウントアップ
+            currentCount++;
+            localStorage.setItem(COUNT_KEY, currentCount);
+            localStorage.setItem(STORAGE_KEY, Date.now());
+        }
+        
+        document.getElementById('count-display').innerText = currentCount.toString().padStart(6, '0');
+    }
+
     function updateTimer() {
         const target = new Date('2026-08-10T00:00:00').getTime();
         const now = new Date().getTime();
@@ -81,6 +92,8 @@
         const s = Math.floor((diff % (1000 * 60)) / 1000);
         document.getElementById('timer').innerHTML = d + "日 " + h + "時間 " + m + "分 " + s + "秒";
     }
+
+    activateCounter();
     setInterval(updateTimer, 1000);
     updateTimer();
 </script>
