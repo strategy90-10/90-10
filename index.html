@@ -5,40 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ada Project | 日本OSデバッグ宣言</title>
     <style>
-        /* 白ベースの清潔感と信頼感のあるデザイン */
         body { font-family: -apple-system, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.8; color: #24292e; background: #fdfdfd; margin: 0; padding: 0; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        
-        header { text-align: center; padding: 80px 0 40px; border-bottom: 1px solid #eaecef; background: #fff; }
-        h1 { font-size: 2.4rem; letter-spacing: -0.02em; margin: 0; color: #1b1f23; }
-        .subtitle { font-size: 1.1rem; color: #586069; margin-top: 15px; }
+        header { text-align: center; padding: 60px 0 30px; border-bottom: 1px solid #eaecef; background: #fff; }
+        h1 { font-size: 2.2rem; letter-spacing: -0.02em; margin: 0; color: #1b1f23; }
+        .subtitle { font-size: 1.1rem; color: #586069; margin-top: 10px; }
+        .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 15px; border: 1px solid #e6be00; font-size: 0.9rem; }
 
-        /* 実績バッジ */
-        .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 20px; border: 1px solid #e6be00; font-size: 0.95rem; }
+        /* カウントダウン：黒背景で視覚を奪う */
+        .countdown-card { background: #1b1f23; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .timer-label { font-size: 1rem; color: #adb5bd; margin-bottom: 10px; letter-spacing: 0.1em; }
+        #timer { font-size: 2rem; font-weight: 700; font-family: 'Courier New', Courier, monospace; }
 
-        /* カウントダウン：白背景に映える濃いグレー/黒のカード */
-        .countdown-card { background: #1b1f23; color: #fff; padding: 40px 20px; border-radius: 12px; text-align: center; margin: 40px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .timer-label { font-size: 1rem; color: #adb5bd; margin-bottom: 15px; letter-spacing: 0.1em; }
-        #timer { font-size: 2.2rem; font-weight: 700; font-family: 'Courier New', Courier, monospace; }
+        /* 見えるカウンターセクション */
+        .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #fff; border: 1px solid #eaecef; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .visitor-label { font-size: 0.95rem; font-weight: bold; color: #333; margin-bottom: 15px; }
+        .counter-img { filter: contrast(1.2); transform: scale(1.3); margin: 10px 0; }
 
-        /* カウンター表示 */
-        .visitor-section { text-align: center; margin: 30px 0; padding: 20px; background: #fff; border: 1px solid #eaecef; border-radius: 8px; }
-        .visitor-label { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
-
-        /* 各セクション */
-        .section { margin-bottom: 60px; background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eaecef; }
-        .section h2 { font-size: 1.6rem; color: #d73a49; border-bottom: 2px solid #d73a49; padding-bottom: 10px; margin-top: 0; }
+        .section { margin-bottom: 50px; background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #eaecef; }
+        .section h2 { font-size: 1.5rem; color: #d73a49; border-bottom: 2px solid #d73a49; padding-bottom: 10px; margin-top: 0; }
         .highlight { background: linear-gradient(transparent 70%, #ffff00 70%); font-weight: bold; padding: 0 2px; }
 
-        /* 掲示板エリア */
         .bbs-box { background: #f6f8fa; border: 1px solid #d1d5da; padding: 40px; border-radius: 12px; text-align: center; }
-        .bbs-box h3 { margin-top: 0; font-size: 1.4rem; }
-        .bbs-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
-        .btn-bbs { display: inline-block; background: #24292e; color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; min-width: 200px; }
-        .btn-bbs:hover { background: #444; text-decoration: none; }
+        .btn-bbs { display: inline-block; background: #24292e; color: #fff; padding: 16px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; min-width: 220px; margin: 5px; }
         .btn-sub { background: #fff; color: #24292e; border: 1px solid #d1d5da; }
-        .btn-sub:hover { background: #f3f4f6; }
-
         footer { text-align: center; padding: 60px; color: #6a737d; font-size: 0.85rem; border-top: 1px solid #eaecef; }
     </style>
 </head>
@@ -52,10 +42,16 @@
 
 <div class="container">
     
+    <!-- 見えるカウンター：FC2サービスを組み込み -->
     <div class="visitor-section">
-        <div class="visitor-label">本拠地 延べ訪問者数</div>
-        <img src="https://f-counter.net" alt="counter" style="border: none;">
-        <div style="font-size: 0.85rem; color: #999; margin-top: 10px;">※3万人の流入を順次記録中</div>
+        <div class="visitor-label">🏯 本拠地 延べ訪問者数</div>
+        <div class="counter-img">
+            <script type="text/javascript" src="//://fc2.com"></script>
+            <noscript><img src="//://fc2.com" alt="counter"></noscript>
+        </div>
+        <div style="font-size: 0.85rem; color: #d73a49; margin-top: 15px; font-weight: bold;">
+            ※3万人の目撃者を順次記録中
+        </div>
     </div>
 
     <div class="countdown-card">
@@ -80,13 +76,11 @@
 
     <div class="bbs-box">
         <h3>作戦会議室（公式掲示板）</h3>
-        <p style="font-size: 0.95rem; color: #586069; text-align: left; max-width: 600px; margin: 0 auto 20px;">
-            現在、メディア掲載によるアクセス集中を受け、議論の透明性とリアルタイム性を確保するため、機能をX（旧Twitter）に集約しています。
+        <p style="font-size: 0.95rem; color: #586069; margin-bottom: 25px;">
+            現在、メディア掲載によるアクセス集中を受け、機能をX（旧Twitter）に集約しています。
         </p>
-        <div class="bbs-container">
-            <a href="https://x.com/90percent_side/status/2047189123170210071" class="btn-bbs" target="_blank">Xで議論に参加</a>
-            <a href="https://hayabusa3.open2ch.net/test/read.cgi/news/1777005531/l10" class="btn-bbs btn-sub" target="_blank">おーぷん2ch（避難所）</a>
-        </div>
+        <a href="https://x.com" class="btn-bbs" target="_blank">Xで議論に参加</a>
+        <a href="https://open2ch.net" class="btn-bbs btn-sub" target="_blank">おーぷん2ch（避難所）</a>
     </div>
 </div>
 
@@ -99,21 +93,14 @@
         const target = new Date('2026-08-10T00:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
-        
-        if (diff <= 0) {
-            document.getElementById('timer').innerHTML = "デバッグ実行中";
-            return;
-        }
-
+        if (diff <= 0) { document.getElementById('timer').innerHTML = "デバッグ実行中"; return; }
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
         document.getElementById('timer').innerHTML = d + "日 " + h + "時間 " + m + "分 " + s + "秒";
     }
-    setInterval(updateTimer, 1000);
-    updateTimer();
+    setInterval(updateTimer, 1000); updateTimer();
 </script>
-
 </body>
 </html>
