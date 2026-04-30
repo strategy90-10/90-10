@@ -11,10 +11,8 @@
         .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 15px; font-size: 0.9rem; }
         .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 15px; }
         
-        /* FC2カウンターをデジタル風に包み込むパネル */
-        .counter-box { background: #000; color: #0f0; font-family: 'Courier New', monospace; font-size: 1.5rem; padding: 15px 25px; border-radius: 8px; display: inline-block; border: 3px solid #333; box-shadow: inset 0 0 10px #000; }
-        /* FC2標準の文字色を強制的にデジタルグリーンへ上書き */
-        .counter-box span, .counter-box a { color: #0f0 !important; text-decoration: none !important; }
+        .counter-box { background: #000; color: #0f0; font-family: 'Courier New', monospace; padding: 15px 25px; border-radius: 8px; display: inline-block; border: 3px solid #333; box-shadow: inset 0 0 10px #000; }
+        .counter-box span, .counter-box a { color: #0f0 !important; text-decoration: none !important; font-size: 1.5rem; font-weight: bold; }
         
         .online-count { margin-top: 10px; font-size: 0.85rem; color: #666; font-weight: bold; }
         .countdown-card { background: #000; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
@@ -22,7 +20,20 @@
         .section { margin-bottom: 50px; }
         .section h2 { border-left: 5px solid #d73a49; padding-left: 15px; font-size: 1.5rem; color: #1b1f23; }
         .highlight { background: #ffff00; font-weight: bold; }
-        .btn-bbs { display: inline-block; background: #000; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; }
+        
+        /* 作戦会議室（掲示板）エリアの最適化 */
+        .action-area { text-align: center; background: #f6f8fa; padding: 40px; border-radius: 12px; margin-top: 40px; border: 1px solid #eee; }
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        .btn { display: inline-block; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; min-width: 220px; transition: 0.3s; border: 2px solid #000; }
+        
+        /* 掲示板ボタン：公式感のある青 */
+        .btn-bbs { background: #0056b3; color: #fff; border-color: #0056b3; }
+        .btn-bbs:hover { background: #fff; color: #0056b3; }
+        
+        /* Xボタン：洗練された黒 */
+        .btn-x { background: #000; color: #fff; }
+        .btn-x:hover { background: #fff; color: #000; }
+        
         footer { text-align: center; padding: 60px; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; }
     </style>
 </head>
@@ -37,22 +48,15 @@
 <div class="container">
     <div class="visitor-section">
         <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 15px;">🏯 本拠地 延べ訪問者数</div>
-        
         <div class="counter-box">
-            <!-- FC2カウンター（延べ人数） -->
-            <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40987521&main=1"></script>
-            <noscript><img src="//counter1.fc2.com/counter_img.php?id=40987521&main=1" /></noscript>
+            <!-- FC2カウンター -->
+            <script language="javascript" type="text/javascript" src="//://fc2.com"></script>
+            <noscript><img src="//://fc2.com" /></noscript>
         </div>
-
         <div class="online-count">
             📡 潜伏中の目撃者: 
-            <!-- FC2オンラインカウンター -->
-            <script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=40987521&main=1"></script>
-            <noscript><img src="//counter1.fc2.com/counter_now.php?id=40987521&main=1" /></noscript> 名
-        </div>
-
-        <div style="font-size: 0.85rem; color: #d73a49; margin-top: 15px; font-weight: bold;">
-            ※外部サーバーによる厳格な実数計測中
+            <script language="javascript" type="text/javascript" src="//://fc2.com"></script>
+            <noscript><img src="//://fc2.com" /></noscript> 名
         </div>
     </div>
 
@@ -71,9 +75,13 @@
         <p><span class="highlight">「国家OSのデバッグ」</span>という公務。40%が同時に休めば、システムは止まり、再起動が始まります。</p>
     </div>
 
-    <div style="text-align: center; background: #f6f8fa; padding: 40px; border-radius: 12px;">
-        <h3>作戦会議室</h3>
-        <a href="https://x.com" class="btn-bbs" target="_blank">Xで議論に参加</a>
+    <div class="action-area">
+        <h3>🛡️ 作戦会議室</h3>
+        <p style="font-size: 0.9rem; color: #666;">公式掲示板（FC2）にて、匿名での情報交換と連携を推奨</p>
+        <div class="btn-group">
+            <a href="https://fc2.com" class="btn btn-bbs" target="_blank">公式掲示板で議論</a>
+            <a href="https://x.com" class="btn btn-x" target="_blank">X(旧Twitter)で拡散</a>
+        </div>
     </div>
 </div>
 
@@ -91,7 +99,6 @@
         const s = Math.floor((diff % (1000 * 60)) / 1000);
         document.getElementById('timer').innerHTML = d + "日 " + h + "時間 " + m + "分 " + s + "秒";
     }
-
     setInterval(updateTimer, 1000);
     updateTimer();
 </script>
