@@ -10,8 +10,13 @@
         header { text-align: center; padding: 60px 0 30px; border-bottom: 1px solid #eee; }
         .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 15px; font-size: 0.9rem; }
         .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 15px; }
-        /* 100%確実に表示されるデジタルカウンターパネル */
-        .counter-box { background: #000; color: #0f0; font-family: 'Courier New', monospace; font-size: 3rem; padding: 10px 20px; border-radius: 8px; display: inline-block; border: 3px solid #333; letter-spacing: 5px; box-shadow: inset 0 0 10px #000; }
+        
+        /* FC2カウンターをデジタル風に包み込むパネル */
+        .counter-box { background: #000; color: #0f0; font-family: 'Courier New', monospace; font-size: 1.5rem; padding: 15px 25px; border-radius: 8px; display: inline-block; border: 3px solid #333; box-shadow: inset 0 0 10px #000; }
+        /* FC2標準の文字色を強制的にデジタルグリーンへ上書き */
+        .counter-box span, .counter-box a { color: #0f0 !important; text-decoration: none !important; }
+        
+        .online-count { margin-top: 10px; font-size: 0.85rem; color: #666; font-weight: bold; }
         .countdown-card { background: #000; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
         #timer { font-size: 2rem; font-weight: bold; }
         .section { margin-bottom: 50px; }
@@ -31,11 +36,23 @@
 
 <div class="container">
     <div class="visitor-section">
-        <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 10px;">🏯 本拠地 延べ訪問者数</div>
-        <!-- 外部に依存せず、ブラウザの力で実数を刻む独自計器 -->
-        <div class="counter-box" id="count-display">030258</div>
+        <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 15px;">🏯 本拠地 延べ訪問者数</div>
+        
+        <div class="counter-box">
+            <!-- FC2カウンター（延べ人数） -->
+            <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=40987521&main=1"></script>
+            <noscript><img src="//counter1.fc2.com/counter_img.php?id=40987521&main=1" /></noscript>
+        </div>
+
+        <div class="online-count">
+            📡 潜伏中の目撃者: 
+            <!-- FC2オンラインカウンター -->
+            <script language="javascript" type="text/javascript" src="//counter1.fc2.com/views.php?id=40987521&main=1"></script>
+            <noscript><img src="//counter1.fc2.com/counter_now.php?id=40987521&main=1" /></noscript> 名
+        </div>
+
         <div style="font-size: 0.85rem; color: #d73a49; margin-top: 15px; font-weight: bold;">
-            ※一人の目撃者を"1"として厳格に記録中
+            ※外部サーバーによる厳格な実数計測中
         </div>
     </div>
 
@@ -63,24 +80,6 @@
 <footer>&copy; Ada Project - All Rights Reserved.</footer>
 
 <script>
-    // 【極秘デバッグコード】
-    // 誰かがアクセスした瞬間、その人のブラウザに「目撃者」として刻印し、
-    // 重複を避けながら「実数」として数字を積み上げる。
-    function activateCounter() {
-        const STORAGE_KEY = 'debug_visitor_id';
-        const COUNT_KEY = 'debug_actual_count';
-        let currentCount = parseInt(localStorage.getItem(COUNT_KEY)) || 30258;
-
-        if (!localStorage.getItem(STORAGE_KEY)) {
-            // 新規訪問者のみカウントアップ
-            currentCount++;
-            localStorage.setItem(COUNT_KEY, currentCount);
-            localStorage.setItem(STORAGE_KEY, Date.now());
-        }
-        
-        document.getElementById('count-display').innerText = currentCount.toString().padStart(6, '0');
-    }
-
     function updateTimer() {
         const target = new Date('2026-08-10T00:00:00').getTime();
         const now = new Date().getTime();
@@ -93,7 +92,6 @@
         document.getElementById('timer').innerHTML = d + "日 " + h + "時間 " + m + "分 " + s + "秒";
     }
 
-    activateCounter();
     setInterval(updateTimer, 1000);
     updateTimer();
 </script>
