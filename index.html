@@ -2,70 +2,35 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>System Diagnostic Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ada Project | 日本OSデバッグ宣言</title>
     <style>
-        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; margin: 0; padding: 20px; font-size: 14px; }
-        .log-area { max-width: 900px; margin: 0 auto; }
-        .system-msg { color: #0f0; }
-        .critical { color: #f00; font-weight: bold; }
-        .code-block { background: #111; border-left: 3px solid #333; padding: 15px; margin: 20px 0; color: #888; }
-        .video-link { display: inline-block; border: 1px solid #f00; color: #f00; padding: 10px 20px; text-decoration: none; margin: 10px 0; }
-        .video-link:hover { background: #f00; color: #fff; }
-        .input-area { margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; }
-        iframe { width: 100%; height: 600px; border: none; filter: invert(1) grayscale(1); }
+        body { background: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .video-area { margin: 30px 0; border: 2px solid #f00; padding: 10px; }
+        .btn { display: inline-block; background: #f00; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; }
+        .form-area { margin-top: 50px; background: #fff; padding: 10px; }
+        h1 { color: #f00; font-size: 1.5rem; }
     </style>
 </head>
 <body>
 
-<div class="log-area">
-    <div id="typewriter"></div>
+<div class="container">
+    <h1>🛡️ 日本OSデバッグ宣言</h1>
+    <p>9割の庶民のための生存戦略</p>
 
-    <div id="main-content" style="display:none;">
-        <div class="code-block">
-            #include &lt;geopolitics.h&gt;<br>
-            /* 9割の庶民のための生存戦略・日本OSデバッグ */<br>
-            void main() {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;if (status == SACRIFICE) {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init_rebellion_protocol();<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-            }
-        </div>
+    <div class="video-area">
+        <p>【潜伏映像】</p>
+        <!-- 下のリンクを押せば必ず動画に飛びます -->
+        <a href="https://youtube.com" class="btn" target="_blank">🎥 映像を再生する</a>
+    </div>
 
-        <p class="critical">[CRITICAL_ALERT] 日本は「要塞米国」を維持するための消費部品として定義されました。</p>
-
-        <p class="system-msg">> 映像資料の解析準備完了</p>
-        <a href="https://youtu.be" target="_blank" class="video-link">
-            ./execute_briefing_video.sh
-        </a>
-
-        <div class="input-area">
-            <p class="system-msg">> 作戦会議室（暗号化通信）</p>
-            <!-- GoogleフォームのURLをここに上書き -->
-            <iframe src="ここにGoogleフォームのURL"></iframe>
-        </div>
+    <div class="form-area">
+        <p style="color:#000">🛡️ 作戦会議室（直通メッセージ）</p>
+        <!-- ここにGoogleフォームのURLを上書きしてください -->
+        <iframe src="ここにGoogleフォームのURL" width="100%" height="600" frameborder="0">読み込み中…</iframe>
     </div>
 </div>
 
-<script>
-    const lines = [
-        "> LOADING KERNEL... [OK]",
-        "> DECRYPTING ADA_PROJECT_DATA... [OK]",
-        "> DETECTING GEOPOLITICS_RISK... [CRITICAL]",
-        "> 8.10 BOYCOTT_PROTOCOL: READY"
-    ];
-    let lineIdx = 0;
-    const out = document.getElementById('typewriter');
-
-    function typeLine() {
-        if (lineIdx < lines.length) {
-            out.innerHTML += lines[lineIdx] + "<br>";
-            lineIdx++;
-            setTimeout(typeLine, 600);
-        } else {
-            document.getElementById('main-content').style.display = 'block';
-        }
-    }
-    typeLine();
-</script>
 </body>
 </html>
