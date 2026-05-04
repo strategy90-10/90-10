@@ -2,83 +2,70 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index of /dev/null</title>
+    <title>System Diagnostic Tool</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.2; overflow-x: hidden; margin: 0; }
-        .code-layer { color: #1a1a1a; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; font-size: 11px; overflow: hidden; pointer-events: none; }
-        .terminal { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; padding-bottom: 100px; }
-        .prompt::before { content: "root@ada_project:~$ "; color: #f00; }
-        .cursor { display: inline-block; width: 10px; height: 1.2em; background: #0f0; animation: blink 1s infinite; vertical-align: middle; }
-        @keyframes blink { 50% { opacity: 0; } }
-        .msg { margin-bottom: 20px; white-space: pre-wrap; font-size: 1.1rem; }
-        /* 動画エリアを安定させる設定 */
-        .video-container { position: relative; width: 100%; padding-top: 56.25%; background: #000; border: 1px solid #333; margin: 20px 0; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .action-area { border-top: 1px dashed #333; margin-top: 40px; padding-top: 20px; }
-        iframe.g-form { background: #eee; filter: invert(1) hue-rotate(180deg) brightness(0.9); border: none; }
+        body { background: #000; color: #ccc; font-family: 'Courier New', monospace; margin: 0; padding: 20px; font-size: 14px; }
+        .log-area { max-width: 900px; margin: 0 auto; }
+        .system-msg { color: #0f0; }
+        .critical { color: #f00; font-weight: bold; }
+        .code-block { background: #111; border-left: 3px solid #333; padding: 15px; margin: 20px 0; color: #888; }
+        .video-link { display: inline-block; border: 1px solid #f00; color: #f00; padding: 10px 20px; text-decoration: none; margin: 10px 0; }
+        .video-link:hover { background: #f00; color: #fff; }
+        .input-area { margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; }
+        iframe { width: 100%; height: 600px; border: none; filter: invert(1) grayscale(1); }
     </style>
 </head>
 <body>
 
-<div class="code-layer">
-    /* GEOPOLITICS_OS_PATCH_VER_8.10 */
-    #include &lt;stdio.h&gt;
-    int main() {
-        char *target = "SACRIFICE_ONE";
-        while(1) { printf("REBUILDING_JAPAN_CORE..."); }
-        return 0;
-    }
-</div>
+<div class="log-area">
+    <div id="typewriter"></div>
 
-<div class="terminal">
-    <div class="msg" id="output"></div>
-    <span id="cursor" class="cursor"></span>
+    <div id="main-content" style="display:none;">
+        <div class="code-block">
+            #include &lt;geopolitics.h&gt;<br>
+            /* 9割の庶民のための生存戦略・日本OSデバッグ */<br>
+            void main() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (status == SACRIFICE) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init_rebellion_protocol();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }
+        </div>
 
-    <div id="content" style="display:none;">
-        <div class="prompt">./show_briefing_video</div>
-        <p style="color: #ffd700;">📡 潜伏映像：解析完了</p>
-        
-        <div class="video-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; border: 2px solid #f00;">
-    <p style="color: #f00; font-weight: bold;">[ACCESS_RESTRICTED]</p>
-    <p>YouTube側の検閲（埋め込み制限）を検知しました。</p>
-    <p>以下のプロキシリンクから直接映像を解析してください：</p>
-    <a href="https://youtu.be" target="_blank" style="color: #0f0; font-size: 1.5rem; text-decoration: underline;">
-        ./execute_direct_video_stream
-    </a>
-</div>
+        <p class="critical">[CRITICAL_ALERT] 日本は「要塞米国」を維持するための消費部品として定義されました。</p>
 
-        <div class="action-area">
-            <div class="prompt">cat /proc/geopolitics/warning</div>
-            <p>[CRITICAL] 9割の庶民のための生存戦略。</p>
-            
-            <div class="prompt">nc -l 8080 &gt; 作戦会議室</div>
-            <!-- GoogleフォームのURLを貼り替えてください -->
-            <iframe class="g-form" src="ここにGoogleフォームのURL" width="100%" height="600" frameborder="0">読み込み中…</iframe>
+        <p class="system-msg">> 映像資料の解析準備完了</p>
+        <a href="https://youtu.be" target="_blank" class="video-link">
+            ./execute_briefing_video.sh
+        </a>
+
+        <div class="input-area">
+            <p class="system-msg">> 作戦会議室（暗号化通信）</p>
+            <!-- GoogleフォームのURLをここに上書き -->
+            <iframe src="ここにGoogleフォームのURL"></iframe>
         </div>
     </div>
 </div>
 
 <script>
-    const text = `> SYSTEM INITIALIZING...
-> KERNEL_CHECK: OK
-> DECODING_ADA_MESSAGE...
-> ........................
-> 日本OSデバッグ宣言：実行中`;
+    const lines = [
+        "> LOADING KERNEL... [OK]",
+        "> DECRYPTING ADA_PROJECT_DATA... [OK]",
+        "> DETECTING GEOPOLITICS_RISK... [CRITICAL]",
+        "> 8.10 BOYCOTT_PROTOCOL: READY"
+    ];
+    let lineIdx = 0;
+    const out = document.getElementById('typewriter');
 
-    let i = 0;
-    const out = document.getElementById('output');
-    function type() {
-        if (i < text.length) {
-            out.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, 40);
+    function typeLine() {
+        if (lineIdx < lines.length) {
+            out.innerHTML += lines[lineIdx] + "<br>";
+            lineIdx++;
+            setTimeout(typeLine, 600);
         } else {
-            document.getElementById('cursor').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
+            document.getElementById('main-content').style.display = 'block';
         }
     }
-    type();
+    typeLine();
 </script>
 </body>
 </html>
