@@ -39,10 +39,14 @@
         <div class="prompt">./show_briefing_video</div>
         <p style="color: #ffd700;">📡 潜伏映像：解析完了</p>
         
-        <div class="video-container">
-            <!-- YouTube公式埋め込み形式 -->
-            <iframe src="https://youtube.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+        <div class="video-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; border: 2px solid #f00;">
+    <p style="color: #f00; font-weight: bold;">[ACCESS_RESTRICTED]</p>
+    <p>YouTube側の検閲（埋め込み制限）を検知しました。</p>
+    <p>以下のプロキシリンクから直接映像を解析してください：</p>
+    <a href="https://youtu.be" target="_blank" style="color: #0f0; font-size: 1.5rem; text-decoration: underline;">
+        ./execute_direct_video_stream
+    </a>
+</div>
 
         <div class="action-area">
             <div class="prompt">cat /proc/geopolitics/warning</div>
