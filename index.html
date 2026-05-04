@@ -3,85 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ada Project | 日本OSデバッグ宣言</title>
+    <title>Index of /dev/null</title>
     <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.8; color: #24292e; background: #fff; margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; padding: 60px 0 30px; border-bottom: 1px solid #eee; }
-        .achievement-badge { background: #ffd700; color: #000; padding: 8px 20px; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 15px; font-size: 0.9rem; }
-        .visitor-section { text-align: center; margin: 30px 0; padding: 25px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 15px; }
-        .counter-box { background: #000; color: #0f0; font-family: 'Courier New', monospace; padding: 15px 25px; border-radius: 8px; display: inline-block; border: 3px solid #333; box-shadow: inset 0 0 10px #000; }
-        .counter-box span, .counter-box a { color: #0f0 !important; text-decoration: none !important; font-size: 1.5rem; font-weight: bold; }
-        .online-count { margin-top: 10px; font-size: 0.85rem; color: #666; font-weight: bold; }
-        .countdown-card { background: #000; color: #fff; padding: 35px 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
-        #timer { font-size: 2rem; font-weight: bold; }
-        .section { margin-bottom: 50px; }
-        .section h2 { border-left: 5px solid #d73a49; padding-left: 15px; font-size: 1.5rem; color: #1b1f23; }
-        .highlight { background: #ffff00; font-weight: bold; }
-        .action-area { text-align: center; background: #f6f8fa; padding: 20px; border-radius: 12px; margin-top: 40px; border: 1px solid #eee; }
-        .btn-x { display: inline-block; padding: 15px 30px; background: #000; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 20px; }
-        footer { text-align: center; padding: 60px; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; }
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; padding: 20px; line-height: 1.2; overflow-x: hidden; margin: 0; }
+        .code-layer { color: #1a1a1a; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; font-size: 11px; overflow: hidden; pointer-events: none; }
+        .terminal { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; padding-bottom: 100px; }
+        .prompt::before { content: "root@ada_project:~$ "; color: #f00; }
+        .cursor { display: inline-block; width: 10px; height: 1.2em; background: #0f0; animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .msg { margin-bottom: 20px; white-space: pre-wrap; font-size: 1.1rem; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border: 1px solid #333; margin: 20px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; filter: grayscale(0.5) contrast(1.2); }
+        .action-area { border-top: 1px dashed #333; margin-top: 40px; padding-top: 20px; }
+        iframe.g-form { background: #eee; filter: invert(1) hue-rotate(180deg) brightness(0.9); border: none; }
+        .footer { color: #333; font-size: 0.8rem; margin-top: 50px; text-align: center; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="achievement-badge">🛡️ 30,000インプレッション突破</div>
-    <h1>日本OSデバッグ宣言</h1>
-    <p>地政学リスクと、9割の庶民のための生存戦略</p>
-</header>
+<div class="code-layer">
+    /* GEOPOLITICS_OS_PATCH_VER_8.10 */
+    #include &lt;stdio.h&gt;
+    int main() {
+        char *target = "SACRIFICE_ONE";
+        while(1) { printf("REBUILDING_JAPAN_CORE..."); }
+        return 0;
+    }
+    /* 01000001 01000100 01000001 */
+</div>
 
-<div class="container">
-    <div class="visitor-section">
-        <div style="font-size: 0.95rem; font-weight: bold; margin-bottom: 15px;">🏯 本拠地 延べ訪問者数</div>
-        <div class="counter-box">
-            <script language="javascript" type="text/javascript" src="//://fc2.com"></script>
-        </div>
-        <div class="online-count">
-            📡 潜伏中の目撃者: 
-            <script language="javascript" type="text/javascript" src="//://fc2.com"></script> 名
-        </div>
-    </div>
+<div class="terminal">
+    <div class="msg" id="output"></div>
+    <span id="cursor" class="cursor"></span>
 
-    <div class="countdown-card">
-        <div style="font-size: 1rem; color: #aaa; margin-bottom: 10px;">🏁 8.10 有給ボイコットまで</div>
-        <div id="timer">計測中...</div>
-    </div>
-
-    <div class="section">
-        <h2>【地政学各論】トロッコの「1」にされた日本</h2>
-        <p>米国は自給自足可能な「要塞」であり、戦争の勝率が最も高い。米国が選んだ日本を「犠牲の1人」にするトロッコ問題。我々は米国を活かすための部品にされています。</p>
-    </div>
-
-    <div class="action-area">
-        <h3>🛡️ 作戦会議室（直通）</h3>
-        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">匿名でメッセージを送信し、足跡を残してください</p>
+    <div id="content" style="display:none;">
+        <div class="prompt">./show_briefing_video</div>
+        <p style="color: #ffd700;">📡 潜伏映像：再生中（音声注意）</p>
         
-        <!https://docs.google.com/forms/d/e/1FAIpQLSdNKov2UDeeQLdJS-_JDzNfrhi5KPJwc1-uJ3K2-QU3FCZeZA/viewform?usp=header>
-        <iframe src="ここにGoogleフォームのURL" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">読み込み中…</iframe>
+        <div class="video-container">
+            <iframe src="https://youtube.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-        <div style="margin-top: 20px;">
-            <a href="https://x.com" class="btn-x" target="_blank">X(旧Twitter)で拡散</a>
+        <div class="action-area">
+            <div class="prompt">cat /proc/geopolitics/warning</div>
+            <p>[CRITICAL] 9割の庶民のための生存戦略。我々は部品ではない。</p>
+            
+            <div class="prompt">nc -l 8080 &gt;作戦会議室</div>
+            <p>🛡️ 直通メッセージ送信</p>
+            <!-- 取得したGoogleフォームのURLをここに貼る -->
+            <iframe class="g-form" src="ここにGoogleフォームのURL" width="100%" height="600" frameborder="0">読み込み中…</iframe>
+        </div>
+        
+        <div class="footer">
+            &copy; 2026 Ada Project - SYSTEM_RECOVERY_STARTED
         </div>
     </div>
 </div>
 
-<footer>&copy; Ada Project - All Rights Reserved.</footer>
-
 <script>
-    function updateTimer() {
-        const target = new Date('2026-08-10T00:00:00').getTime();
-        const now = new Date().getTime();
-        const diff = target - now;
-        if (diff <= 0) { document.getElementById('timer').innerHTML = "実行中"; return; }
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
-        document.getElementById('timer').innerHTML = d + "日 " + h + "時間 " + m + "分 " + s + "秒";
+    const text = `> SYSTEM INITIALIZING...
+> KERNEL_CHECK: OK
+> GEOPOLITICS_RISK_DETECTION: 100%
+> DECODING_ADA_MESSAGE...
+> ........................
+> 日本OSデバッグ宣言：実行中`;
+
+    let i = 0;
+    const out = document.getElementById('output');
+    function type() {
+        if (i < text.length) {
+            out.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 40);
+        } else {
+            document.getElementById('cursor').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
     }
-    setInterval(updateTimer, 1000);
-    updateTimer();
+    type();
 </script>
 </body>
 </html>
